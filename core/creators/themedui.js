@@ -283,28 +283,40 @@ CKEDITOR.replaceClass = 'ckeditor';
 			outer = container;
 		}
 
-		// Set as border box width. (https://dev.ckeditor.com/ticket/5353)
-		outer.setSize( 'width', width, true );
+		if ( !isNaN( width ) || width.endsWith( 'px' ) ) {
+			// Set as border box width. (https://dev.ckeditor.com/ticket/5353)
+			outer.setSize( 'width', parseInt( width ), true );
+		} else {
+			// we do not subtracting border width - 2px, so width is always bigger by 2px
+			outer.setStyle( 'width', width );
+		}
 
 		// WebKit needs to refresh the iframe size to avoid rendering issues. (1/2) (https://dev.ckeditor.com/ticket/8348)
 		contentsFrame && ( contentsFrame.style.width = '1%' );
 
-		// Get the height delta between the outer table and the content area.
-		var contentsOuterDelta = ( outer.$.offsetHeight || 0 ) - ( contents.$.clientHeight || 0 ),
+		if ( !isNaN( height ) || height.endsWith( 'px' ) ) {
+			height = parseInt( height );
 
-		// If we're setting the content area's height, then we don't need the delta.
-			resultContentsHeight = Math.max( height - ( isContentHeight ? 0 : contentsOuterDelta ), 0 ),
-			resultOuterHeight = ( isContentHeight ? height + contentsOuterDelta : height );
+			// Get the height delta between the outer table and the content area.
+			var contentsOuterDelta = ( outer.$.offsetHeight || 0 ) - ( contents.$.clientHeight || 0 ),
 
-		contents.setStyle( 'height', resultContentsHeight + 'px' );
+			// If we're setting the content area's height, then we don't need the delta.
+				resultContentsHeight = Math.max( height - ( isContentHeight ? 0 : contentsOuterDelta ), 0 ),
+				resultOuterHeight = ( isContentHeight ? height + contentsOuterDelta : height );
+
+			contents.setStyle( 'height', CKEDITOR.tools.cssLength( resultContentsHeight ) );
+		} else {
+			contents.setStyle( 'height', height );
+		}
 
 		// WebKit needs to refresh the iframe size to avoid rendering issues. (2/2) (https://dev.ckeditor.com/ticket/8348)
 		contentsFrame && ( contentsFrame.style.width = '100%' );
 
+		// TODO (hub33k): test this
 		// Emit a resize event.
 		this.fire( 'resize', {
-			outerHeight: resultOuterHeight,
-			contentsHeight: resultContentsHeight,
+			outerHeight: resultOuterHeight || height,
+			contentsHeight: resultContentsHeight || height,
 			// Sometimes width is not provided.
 			outerWidth: width || outer.getSize( 'width' )
 		} );
