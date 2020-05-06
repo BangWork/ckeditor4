@@ -47,6 +47,26 @@
 
 			assert.areSame( 'cke_' + editor.name, editor.container.getId() );
 			assert.areSame( editor.ui.space( 'contents' ), editor.ui.contentsElement );
+		},
+
+		// (#1883)
+		'test css units': function() {
+			var editor = this.editor;
+
+			var unitsToTest = [
+				// relative lenghts
+				'em', 'ex', 'ch', 'rem', 'vw', 'vh', 'vmin', 'vmax', '%',
+
+				// absolute lenghts
+				// note: we omit px here, becouse px values are calculated
+				'cm', 'mm', 'q', 'in', 'pc', 'pt'
+			];
+
+			for ( var i = 0; i < unitsToTest.length; i++ ) {
+				editor.resize( '20' + unitsToTest[i], '10' + unitsToTest[i] );
+				assert.areSame( '20' + unitsToTest[i], editor.container.$.style.width );
+				assert.areSame( '10' + unitsToTest[i], editor.ui.space( 'contents' ).$.style.height );
+			}
 		}
 	} );
 } )();
