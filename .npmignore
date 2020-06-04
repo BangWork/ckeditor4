@@ -1,0 +1,47 @@
+# These files will be ignored by Git and by our linting tools:
+#	grunt jshint
+#	grunt jscs
+#
+# Be sure to append /** to folders to have everything inside them ignored.
+
+# All "dot directories".
+.*/**
+
+node_modules/**
+build/**
+coverage/**
+
+
+samples/toolbarconfigurator/.bender/**
+samples/toolbarconfigurator/node_modules/**
+samples/toolbarconfigurator/docs/**
+
+tests/plugins/mathjax/_assets/mathjax/**
+
+*.css.map
+
+bender-*.log
+
+!.github/*
+.DS_Store
+
+# ignore all source files
+/adapters/**
+/bender.*
+/ckeditor.js
+/config.js
+/contents.css
+/core/**
+/dev/**
+/gruntfile.js
+/lang/**
+/plugins/**
+/samples/**
+/scripts/**
+/skins/**
+/styles.js
+tests/**
+
+dist/*.zip
+dist/*.tar.gz
+!dist/ckeditor/**
