@@ -1,6 +1,6 @@
 {
 	"name": "@ones-ai/ckeditor4",
-	"version": "4.14.0-ONES.5",
+	"version": "4.14.0-ONES.6",
 	"description": "The development version of CKEditor - JavaScript WYSIWYG web text editor.",
 	"maintainers": [
 		{
@@ -31,8 +31,8 @@
 		"shelljs": "^0.8.2"
 	},
 	"scripts": {
-		"prepublish": "npm run build && cp package.json dist/ckeditor/",
-		"build": "bash ./dev/builder/build.sh --no-zip --no-tar --no-ie-checks",
+		"prepublish": "npm run build",
+		"build": "bash ./dev/builder/build.sh --no-zip --no-tar --no-ie-checks && cp package.json dist/ckeditor/",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepack": "cd dist/ckeditor"
 	},
