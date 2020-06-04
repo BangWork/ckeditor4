@@ -72,15 +72,16 @@ then
 fi
 
 java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ $OUTPUT_DIR $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
+cp -r ../../package.json $OUTPUT_DIR/ckeditor/package.json
 
 # Copy and build tests.
 if [[ "$ARGS" == *\ \-t\ * ]]; then
 	echo ""
 	echo "Copying tests..."
 
-	cp -r ../../tests release/ckeditor/tests
-	cp -r ../../package.json release/ckeditor/package.json
-	cp -r ../../bender.js release/ckeditor/bender.js
+	cp -r ../../tests $OUTPUT_DIR/ckeditor/tests
+	cp -r ../../package.json $OUTPUT_DIR/ckeditor/package.json
+	cp -r ../../bender.js $OUTPUT_DIR/ckeditor/bender.js
 
 	echo ""
 	echo "Installing tests..."
@@ -89,4 +90,4 @@ if [[ "$ARGS" == *\ \-t\ * ]]; then
 fi
 
 echo ""
-echo "Release created in the \"release\" directory."
+echo "Release created in the \"$OUTPUT_DIR\" directory."

@@ -28,19 +28,20 @@ bender-*.log
 # ignore all source files
 /adapters/**
 /bender.*
-/ckeditor.js
-/config.js
-/contents.css
+#/ckeditor.js
+#/config.js
+#/contents.css
 /core/**
 /dev/**
 /gruntfile.js
 /lang/**
-/plugins/**
+#/plugins/**
 /samples/**
 /scripts/**
 /skins/**
-/styles.js
+#/styles.js
 tests/**
+*.log
 
 dist/*.zip
 dist/*.tar.gz
