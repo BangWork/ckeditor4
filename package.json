@@ -31,6 +31,7 @@
 		"shelljs": "^0.8.2"
 	},
 	"scripts": {
+	    "build": "./dev/builder/build.sh --no-zip --no-tar --no-ie-checks",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [

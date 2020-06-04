@@ -1,6 +1,6 @@
 /**
- * @license Copyright (c) 2003-2020, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
+ * @license Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
 CKEDITOR.editorConfig = function( config ) {
@@ -9,67 +9,69 @@ CKEDITOR.editorConfig = function( config ) {
 	// config.uiColor = '#AADC6E';
 	// %REMOVE_START%
 	config.plugins =
-		'about,' +
-		'a11yhelp,' +
+		// 'about,' +
+		// 'a11yhelp,' +
 		'basicstyles,' +
-		'bidi,' +
+		// 'bidi,' +
 		'blockquote,' +
 		'clipboard,' +
-		'colorbutton,' +
-		'colordialog,' +
-		'copyformatting,' +
-		'contextmenu,' +
-		'dialogadvtab,' +
-		'div,' +
-		'elementspath,' +
+		// 'colorbutton,' +
+		// 'colordialog,' +
+		// 'copyformatting,' +
+		// 'contextmenu,' +
+		// 'dialogadvtab,' +
+		// 'div,' +
+        'divarea,' +
+		// 'elementspath,' +
 		'enterkey,' +
 		'entities,' +
-		'filebrowser,' +
-		'find,' +
-		'flash,' +
+		// 'filebrowser,' +
+		// 'find,' +
+		// 'flash,' +
 		'floatingspace,' +
-		'font,' +
+		// 'font,' +
 		'format,' +
-		'forms,' +
-		'horizontalrule,' +
+		// 'forms,' +
+		// 'horizontalrule,' +
 		'htmlwriter,' +
-		'image,' +
-		'iframe,' +
+		// 'image,' +
+		// 'iframe,' +
 		'indentlist,' +
-		'indentblock,' +
-		'justify,' +
-		'language,' +
-		'link,' +
+		// 'indentblock,' +
+		// 'justify,' +
+		// 'language,' +
+		// 'link,' +
+		// 'onesupload,' +
 		'list,' +
-		'liststyle,' +
-		'magicline,' +
+		// 'liststyle,' +
+		// 'magicline,' +
 		'maximize,' +
-		'newpage,' +
-		'pagebreak,' +
-		'pastefromgdocs,' +
-		'pastefromlibreoffice,' +
+		// 'newpage,' +
+		// 'pagebreak,' +
 		'pastefromword,' +
 		'pastetext,' +
-		'preview,' +
-		'print,' +
+		// 'preview,' +
+		// 'print,' +
 		'removeformat,' +
 		'resize,' +
-		'save,' +
-		'selectall,' +
-		'showblocks,' +
-		'showborders,' +
-		'smiley,' +
-		'sourcearea,' +
-		'specialchar,' +
+		// 'save,' +
+		// 'selectall,' +
+        'sharedspace,' +
+		// 'showblocks,' +
+		// 'showborders,' +
+		// 'smiley,' +
+		// 'sourcearea,' +
+		// 'specialchar,' +
 		'stylescombo,' +
 		'tab,' +
-		'table,' +
-		'tableselection,' +
-		'tabletools,' +
-		'templates,' +
+		// 'table,' +
+		// 'tableselection,' +
+		// 'tabletools,' +
+		// 'templates,' +
 		'toolbar,' +
 		'undo,' +
-		'uploadimage,' +
+        'widget,' +
+        'widgetselection,' +
 		'wysiwygarea';
 	// %REMOVE_END%
 };
