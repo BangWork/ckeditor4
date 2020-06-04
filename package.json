@@ -1,14 +1,14 @@
 {
 	"name": "@ones-ai/ckeditor4",
-	"version": "4.14.0-ONES.0",
+	"version": "4.14.0-ONES.1",
 	"description": "The development version of CKEditor - JavaScript WYSIWYG web text editor.",
-    "maintainers": [
-        {
-            "name": "ones",
-            "email": "npm@ones.ai",
-            "web": "ones.ai"
-        }
-    ],
+	"maintainers": [
+		{
+			"name": "ones",
+			"email": "npm@ones.ai",
+			"web": "ones.ai"
+		}
+	],
 	"devDependencies": {
 		"benderjs": "0.4.3",
 		"benderjs-coverage": "^0.2.2",
@@ -31,7 +31,7 @@
 		"shelljs": "^0.8.2"
 	},
 	"scripts": {
-	    "build": "./dev/builder/build.sh --no-zip --no-tar --no-ie-checks",
+		"build": "./dev/builder/build.sh --no-zip --no-tar --no-ie-checks",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"keywords": [
