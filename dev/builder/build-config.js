@@ -27,6 +27,7 @@ const CKBUILDER_CONFIG = {
     '.jscsrc',
     '.jshintignore',
     '.jshintrc',
+    'yarn.lock',
     'less',
     '.mailmap',
     'node_modules',

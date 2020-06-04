@@ -16,6 +16,7 @@ PROGNAME=$(basename $0)
 MSG_UPDATE_FAILED="Warning: The attempt to update ckbuilder.jar failed. The existing file will be used."
 MSG_DOWNLOAD_FAILED="It was not possible to download ckbuilder.jar."
 ARGS=" $@ "
+OUTPUT_DIR="../../dist"
 
 function error_exit
 {
@@ -70,7 +71,7 @@ then
 	VERSION="$VERSION DEV"
 fi
 
-java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ release $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
+java -jar ckbuilder/$CKBUILDER_VERSION/ckbuilder.jar --build ../../ $OUTPUT_DIR $JAVA_ARGS --version="$VERSION" --revision="$REVISION" --overwrite
 
 # Copy and build tests.
 if [[ "$ARGS" == *\ \-t\ * ]]; then

@@ -31,7 +31,7 @@
 		"shelljs": "^0.8.2"
 	},
 	"scripts": {
-		"prepublish": "cp package.json dist/ckeditor/",
+		"prepublish": "npm run build && cp package.json dist/ckeditor/",
 		"build": "bash ./dev/builder/build.sh --no-zip --no-tar --no-ie-checks",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"prepack": "cd dist/ckeditor"
